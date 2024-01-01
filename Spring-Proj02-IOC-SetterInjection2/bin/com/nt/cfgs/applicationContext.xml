@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- cfg dependent spring beans(pre-defined) -->
+	<bean id="ldt" class="java.time.LocalDateTime" factory-method="of">
+		<!-- <constructor-arg name="year" value="2023" />
+		 <constructor-arg name="month" value="12" />
+		 <constructor-arg name="dayOfMonth" value="24" />
+		 <constructor-arg name="hour" value="5" />
+		 <constructor-arg name="minute" value="45" /> -->
+		 
+		<constructor-arg value="2023" />
+		<constructor-arg value="12" />
+		<constructor-arg value="24" />
+		<constructor-arg value="5" />
+		<constructor-arg value="45" />
+	</bean>
+	
+	<bean id="dt" class="java.util.Date">
+	<!-- <constructor-arg name="year" value="2023"/>
+	<constructor-arg name="month" value="12"/>
+	<constructor-arg name="year" value="24"/> -->
+	<constructor-arg value="2023"/>
+	<constructor-arg value="12"/>
+	<constructor-arg value="24"/>
+	 </bean>
+	 
+	<!-- Enable component scanning -->
+	<context:component-scan base-package="com.nt.sbeans" />
+</beans>
